@@ -1,0 +1,30 @@
+wandb_version: 1
+
+_wandb:
+  desc: null
+  value:
+    cli_version: 0.9.1
+    is_jupyter_run: false
+    is_kaggle_kernel: false
+    python_version: 3.6.9
+decoder:
+  desc: null
+  value: plain
+downblocks:
+  desc: null
+  value: 4
+encoder:
+  desc: null
+  value: plain
+experiment_name:
+  desc: null
+  value: latency_testing
+measure_latency:
+  desc: null
+  value: 'true'
+model_name:
+  desc: null
+  value: segnet_modular
+upblocks:
+  desc: null
+  value: 1

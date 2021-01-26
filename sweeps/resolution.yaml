@@ -1,0 +1,41 @@
+method: random
+metric:
+  goal: maximize
+  name: best_val_miou
+parameters:
+  experiment_name:
+    value: resolution_v2
+  upblocks:
+    distribution: categorical
+    values: 
+    - 2
+    - 1
+  downblocks:
+    distribution: categorical
+    values:
+      - 5
+  padding: 
+    distribution: categorical
+    values:
+    - same
+  decoder:
+    value: up_plain
+  epochs:
+    value: 400
+  batch_size:
+    value: 16
+  inheight:
+    distribution: categorical
+    values:
+    - 96
+    - 112
+    - 128
+    - 144
+    - 160
+program: ntrain.py
+command:
+  - ${env}
+  - python3
+  - ${program}
+  - ${args}
+  - "--augment"

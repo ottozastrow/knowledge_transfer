@@ -1,0 +1,76 @@
+method: bayes
+metric:
+  goal: maximize
+  name: miou_x_throughput
+project: seg_practical
+parameters:
+  experiment_name:
+    value: galaxy_brain3
+  upblocks:
+    distribution: categorical
+    values: 
+    - 3
+    - 2
+    - 1
+  padding: 
+    distribution: categorical
+    values:
+    - same
+    - valid
+  epochs:
+    value: 400
+  batch_size:
+    distribution: categorical
+    values: 
+     - 16
+     - 32
+     - 8
+  downblocks:
+    distribution: categorical
+    values:
+      - 6
+      - 5
+      - 4
+  inheight:
+    distribution: categorical
+    values:
+    - 96
+    - 112
+    - 128
+    - 144
+    - 160
+  channel_decoder_multiplier:
+    distribution: categorical
+    values:
+      - 0.5
+      - 0.25
+      - 0.125
+      - 1.0
+      - 1.5
+      - 2.0
+  channel_multiplier:
+    distribution: categorical
+    values:
+      - 0.5
+      - 0.25
+      - 1.0
+      - 1.5
+      - 2.0
+  encoder:
+    distribution: categorical
+    values:
+      - down_plain
+      - down_unet
+  decoder:
+    distribution: categorical
+    values: 
+      - up_plain
+      - up_unet
+      - up_learnt
+program: ntrain.py
+command:
+  - ${env}
+  - python3
+  - ${program}
+  - ${args}
+  - "--augment"

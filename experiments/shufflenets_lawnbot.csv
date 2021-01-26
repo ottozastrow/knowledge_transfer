@@ -1,0 +1,4 @@
+"model_name","preset","trainable_params","val_miou","val_miou_plainKD"
+"shufflenet","tiny_b",98180,0.862656831741333,0.8803
+"shufflenet","sm_b",166466,0.9070483446121216,0.9175
+"shufflenet","lg_b",1580578,0.9173493087291718,0.9216

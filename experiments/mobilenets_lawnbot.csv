@@ -1,0 +1,5 @@
+"model_name","preset","trainable_params","val_miou","val_miou_plainKD"
+"mob","1.0",3786178,None,0.9492
+"mob","0.4",658499,0.9256,0.925
+"mob","0.3",409513,0.9248,0.9213
+"mob","0.2",198765,0.9177,0.9128

@@ -1,0 +1,2 @@
+2020-09-11 20:15:02,543 DEBUG   MainThread:28135 [connectionpool.py:_new_conn():959] Starting new HTTPS connection (1): api.wandb.ai:443
+2020-09-11 20:15:02,875 DEBUG   MainThread:28135 [connectionpool.py:_make_request():437] https://api.wandb.ai:443 "POST /graphql HTTP/1.1" 200 None

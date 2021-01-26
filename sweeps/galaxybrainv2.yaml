@@ -1,0 +1,76 @@
+method: bayes
+metric:
+  goal: maximize
+  name: optimality
+project: seg_practical
+parameters:
+  experiment_name:
+    value: laptop_sweep
+  upblocks:
+    distribution: int_uniform
+    min: 1
+    max: 3
+  padding: 
+    distribution: categorical
+    values:
+    - same
+  epochs:
+    value: 500
+  batch_size:
+    distribution: categorical
+    values: 
+     - 16
+     - 32
+     - 8
+  downblocks:
+    distribution: categorical
+    values:
+      - 6
+      - 5
+      - 4
+  inheight:
+    distribution: categorical
+    values:
+    - 96
+    - 112
+    - 128
+    - 144
+    - 160
+    - 192
+  channel_decoder_multiplier:
+    distribution: int_uniform
+    min: -2
+    max: 2
+  channel_multiplier:
+    distribution: int_uniform
+    min: -3
+    max: 2
+  double_convs_until:
+    distribution: int_uniform
+    min: -5
+    max: 5
+  encoder:
+    distribution: categorical
+    values:
+      - down_unet
+  dropout_rate:
+    distribution: uniform
+    min: 0.0
+    max: 0.4
+  decoder:
+    distribution: categorical
+    values: 
+      - up_plain
+      - up_unet
+      - up_learnt
+early_terminate:
+  type: hyperband
+  min_iter: 15
+program: ntrain.py
+command:
+  - ${env}
+  - python3
+  - ${program}
+  - ${args}
+  - "--augment"
+  - "--target_latency=0.2"

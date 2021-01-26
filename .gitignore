@@ -1,0 +1,15 @@
+wandb/**
+logs/**
+visualizations/**
+training_console/**
+__pycache__/
+**/*.pyc
+**/*.h5
+**/*.hdf5
+selected_trained_models/**.h5
+selected_trained_models/**.hdf5
+teacher_output/**
+model.png
+.vscode/
+.cache/
+.ipynb_checkpoints/
